@@ -7,7 +7,8 @@ export default (env: BuildEnv) => {
   const paths: BuildPaths = {
     entry: path.resolve(__dirname, 'src', 'index.tsx'), // стартовая точка нашего приложения, // RANDOM: path.resolve(__dirname, 'src', 'index.js') - тут может быть любое названия длля бандла но обычно это не нужно,
     build: path.resolve(__dirname, 'build'), // где собираем ,
-    html: path.resolve(__dirname, 'public', 'index.html') // шаблон для сборки html 
+    html: path.resolve(__dirname, 'public', 'index.html'), // шаблон для сборки html 
+    src: path.resolve(__dirname, 'src'), // настройка для абсолюных путей(src будет по умолчанию)
   }
 
   const mode = env.mode || 'development'

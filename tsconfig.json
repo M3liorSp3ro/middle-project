@@ -8,6 +8,9 @@
       "allowJs": true, //компилятор будет обрабатывать не только ts но и js
       "moduleResolution": "node",
       "baseUrl": ".", // для абсолюютного импорта
+      "paths": {
+        "*": ["./src/*"]
+      },
       "esModuleInterop": true, // сделать импорты более привычными
       "allowSyntheticDefaultImports": true // сделать импорты более привычными
     },
