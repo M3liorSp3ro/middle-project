@@ -14,7 +14,8 @@ export function buildPlagins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
             chunkFilename: 'css/[name].[contenthash:8].css',
         }),
         new webpack.DefinePlugin({
-            __IS_DEV__: JSON.stringify(isDev),
-        })
+            __IS_DEV__: JSON.stringify(isDev), // переменные окружения
+        }),
+        new webpack.HotModuleReplacementPlugin() // плагин для обновления кода без обновления страницы
     ]
 }
