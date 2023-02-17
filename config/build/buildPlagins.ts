@@ -1,12 +1,12 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import webpack from "webpack";
-import { BuildOptions } from "./types/config";
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BuildOptions } from './types/config';
 
-export function buildPlagins({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] {
-    return  [
+export function buildPlagins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+    return [
         new HtmlWebpackPlugin({
-            template: paths.html
+            template: paths.html,
         }), // плагин для работы с html минификация
         new webpack.ProgressPlugin(), // плагин для понимания времени сборки
         new MiniCssExtractPlugin({
@@ -16,6 +16,7 @@ export function buildPlagins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev), // переменные окружения
         }),
-        new webpack.HotModuleReplacementPlugin() // плагин для обновления кода без обновления страницы
-    ]
+        // плагин для обновления кода без обновления страницы
+        new webpack.HotModuleReplacementPlugin(),
+    ];
 }

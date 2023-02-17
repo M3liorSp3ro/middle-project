@@ -1,12 +1,13 @@
-type Mods = Record<string, boolean | string> // обычный тип объекта но с ограниченными типами значений
+// обычный тип объекта но с ограниченными типами значений
+type Mods = Record<string, boolean | string>
 
 export function classNames(cls: string, mods?: Mods, additional?: string[]): string {
     return [
         cls,
         ...additional.filter(Boolean),
         ...Object.entries(mods)
-            .filter(([classNames, value]) => Boolean(value))
-            .map(([classNames]) => classNames)
+            .filter(([_, value]) => Boolean(value))
+            .map(([className]) => className),
     ]
-        .join(' ')
-}   
+        .join(' ');
+}
