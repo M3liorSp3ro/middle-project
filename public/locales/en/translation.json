@@ -1,5 +1,9 @@
 {
     "Главная страница": "Main page",
     "Язык": "English",
-    "Переключение":  "Toggle"
+    "Переключение":  "Toggle",
+    "Страница не найдена": "Page not found",
+    "Призошла непредвиденная ошибка": "Something wrong",
+    "Обновить страницу": "Reload page",
+    "throw error": "throw error"
 }
