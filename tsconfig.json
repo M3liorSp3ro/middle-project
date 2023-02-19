@@ -1,4 +1,5 @@
 {
+  
     "compilerOptions": {
       "outDir": "./dist/", // то куда производится сборка
       "noImplicitAny": true, // подсвечивает все места где не указан тип
@@ -18,5 +19,10 @@
       "compilerOptions": {
         "module": "CommonJS"
       }
-    }
+    },
+    "include": [ // для дружбы тестов и ts
+      "./config/jest/setupTests.ts",
+      "src"
+    ],
+    
   }
